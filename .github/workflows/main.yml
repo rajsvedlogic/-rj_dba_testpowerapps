@@ -1,6 +1,5 @@
-name: export-x-solution
-# Export solution from DEV environment
-# unpack it and prepare, commit and push a git branch with the changes
+name: import-x-solution
+# import solution to test environment as un-managed 
 
 on:
   workflow_dispatch:
@@ -21,7 +20,7 @@ env:
   SOLUTION_EXPORTED_FOLDER: out/exported/
   SOLUTION_FOLDER: out/solutions/
   SOLUTION_TARGET_FOLDER: solutions/
-
+  
 jobs:
  export-from-dev:
   runs-on: windows-latest
@@ -66,4 +65,3 @@ jobs:
         solution-target-folder: ${{ env.SOLUTION_TARGET_FOLDER}}/${{ github.event.inputs.solution_name }}
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         allow-empty-commit: true
-       
