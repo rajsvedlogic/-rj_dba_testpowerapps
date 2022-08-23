@@ -9,14 +9,6 @@ on:
       solution_name:
         description: 'name of the solution to worked on from Power Platform'
         required: true
-      choice:
-        type: choice
-        description: Make a choice
-        options:
-        - DEV
-        - UAT
-        - PROD
-        required: true
 
 env:
 #edit your values here
